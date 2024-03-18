@@ -16,7 +16,7 @@ app.post("/api/flavors", async (req, res, next) => {
             VALUES ($1)
             RETURNING *
         `;
-          const response = await client.query(SQL, [req.body.txt]);
+          const response = await client.query(SQL, [req.body.name]);
           res.send(response.rows[0]);
      } catch (error) {
           next(error);
